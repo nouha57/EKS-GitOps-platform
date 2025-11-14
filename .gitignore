@@ -100,3 +100,9 @@ argocd-initial-admin-secret.txt
 !kubernetes/platform/cert-manager/README.md
 !kubernetes/platform/ingress-nginx/README.md
 !kubernetes/platform/external-dns/README.md
+
+
+DEPLOYMENT-CHECKLIST.md
+OPTIONAL-ENHANCEMENTS.md
+QUICK-REFERENCE.md
+WHAT-I-BUILT.md
