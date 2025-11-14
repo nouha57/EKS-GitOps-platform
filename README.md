@@ -14,57 +14,16 @@ This project demonstrates a complete cloud-native platform built on AWS EKS, sho
 ## 🌐 Live Demo
 
 > **Status: Currently Live** ✅
-> 
+>
 > The platform is currently deployed and accessible at:
 > - **ArgoCD UI:** https://argocd.nouha-zouaghi.cc
 > - **Demo Application:** https://hello.nouha-zouaghi.cc
 >
-> *Note: Infrastructure may be temporarily destroyed to manage costs (~$191/month). 
-> The platform can be redeployed in ~15 minutes using the provided Terraform code. 
-> Screenshots of the working deployment are available below.*
-
-<!-- 
-DEPLOYMENT STATUS INSTRUCTIONS:
-When infrastructure is LIVE, use this:
-
-> **Status: Currently Live** ✅
-> 
-> The platform is currently deployed and accessible at:
-> - **ArgoCD UI:** https://argocd.nouha-zouaghi.cc
-> - **Demo Application:** https://hello.nouha-zouaghi.cc
-
-When infrastructure is DESTROYED, use this:
-
-> **Status: Temporarily Offline** 💤
-> 
-> The platform was live at:
-> - **ArgoCD UI:** https://argocd.nouha-zouaghi.cc
-> - **Demo Application:** https://hello.nouha-zouaghi.cc
->
-> Infrastructure has been temporarily destroyed to manage costs (~$191/month).
-> The platform can be redeployed in ~15 minutes using the provided Terraform code.
-> Screenshots below show the working deployment.
--->
+> *Note: Infrastructure may be temporarily destroyed to manage costs (~$191/month). The platform can be redeployed in ~15 minutes using the provided Terraform code.*
 
 ## 📸 Screenshots
 
-### ArgoCD Dashboard
-![ArgoCD Dashboard](docs/screenshots/argocd-dashboard.png)
-*GitOps continuous delivery platform managing all applications*
-
-### Hello World Application
-![Hello World App](docs/screenshots/hello-world-app.png)
-*Demo application with automatic HTTPS and DNS*
-
-### AWS EKS Cluster
-![EKS Cluster](docs/screenshots/eks-cluster.png)
-*Managed Kubernetes cluster in AWS Console*
-
-### Valid SSL Certificate
-![SSL Certificate](docs/screenshots/ssl-certificate.png)
-*Automatic Let's Encrypt certificate with cert-manager*
-
-> **Note:** To add screenshots, create a `docs/screenshots/` directory and add your images there.
+> **Note:** Screenshots will be added soon. The platform is currently live and accessible at the URLs above.
 
 ## 🏗️ Architecture
 
@@ -154,7 +113,7 @@ When infrastructure is DESTROYED, use this:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/eks-gitops-platform.git
+git clone https://github.com/nouha57/EKS-GitOps-platform.git
 cd eks-gitops-platform
 ```
 
@@ -334,13 +293,6 @@ Approximate monthly costs (us-east-2 region):
 │   └── applications/            # Application manifests
 │       └── hello-world/         # Demo application
 │
-├── .kiro/                       # Project specifications
-│   └── specs/
-│       └── eks-gitops-platform/
-│           ├── requirements.md  # Project requirements
-│           ├── design.md        # Architecture design
-│           └── tasks.md         # Implementation tasks
-│
 └── README.md                    # This file
 ```
 
@@ -501,5 +453,3 @@ This project is open source and available under the MIT License.
 ---
 
 **⭐ If you found this project helpful, please consider giving it a star!**
-#   E K S - G i t O p s - p l a t f o r m  
- 
