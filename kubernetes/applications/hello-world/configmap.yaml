@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-world-html
+  namespace: applications
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Hello World - EKS GitOps Platform</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+            .container {
+                text-align: center;
+                padding: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+            }
+            h1 {
+                font-size: 3em;
+                margin: 0;
+            }
+            p {
+                font-size: 1.2em;
+                margin: 20px 0;
+            }
+            .badge {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 10px;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🚀 Hello World!</h1>
+            <p>Welcome to the EKS GitOps Platform</p>
+            <div>
+                <span class="badge">✅ Kubernetes</span>
+                <span class="badge">✅ ArgoCD</span>
+                <span class="badge">✅ Ingress-Nginx</span>
+                <span class="badge">✅ Cert-Manager</span>
+                <span class="badge">✅ ExternalDNS</span>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9em;">
+                Deployed via GitOps on AWS EKS<br>
+                Domain: nouha-zouaghi.cc
+            </p>
+        </div>
+    </body>
+    </html>

@@ -1,0 +1,128 @@
+# ArgoCD Helm Values
+# This configuration deploys ArgoCD with custom settings for the EKS GitOps platform
+
+global:
+  domain: argocd.nouha-zouaghi.cc
+
+# ArgoCD Server Configuration
+server:
+  replicas: 1
+  
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+  
+  # Ingress will be managed separately by ArgoCD itself (see argocd-ingress.yaml)
+  ingress:
+    enabled: false
+  
+  # Enable insecure mode since we'll terminate TLS at the ingress
+  extraArgs:
+    - --insecure
+  
+  # RBAC Configuration
+  rbacConfig:
+    policy.default: role:readonly
+    policy.csv: |
+      p, role:org-admin, applications, *, */*, allow
+      p, role:org-admin, clusters, get, *, allow
+      p, role:org-admin, repositories, *, *, allow
+      p, role:org-admin, projects, *, *, allow
+      g, admin, role:admin
+
+# Repository Server Configuration
+repoServer:
+  replicas: 1
+  
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 250m
+      memory: 256Mi
+
+# Application Controller Configuration
+controller:
+  replicas: 1
+  
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+# Redis Configuration
+redis:
+  resources:
+    limits:
+      cpu: 200m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+# Dex (SSO) - Disabled for simplicity
+dex:
+  enabled: false
+
+# Notifications Controller
+notifications:
+  enabled: true
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+# ApplicationSet Controller
+applicationSet:
+  enabled: true
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+# Configs
+configs:
+  params:
+    server.insecure: true
+    
+  cm:
+    # Enable anonymous access for demo purposes (disable in production)
+    users.anonymous.enabled: "false"
+    
+    # Timeout settings
+    timeout.reconciliation: 180s
+    
+    # Resource customizations
+    resource.customizations: |
+      networking.k8s.io/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
+  
+  # Repository credentials (using public repos initially)
+  repositories: {}
+  
+  # RBAC policy
+  rbac:
+    policy.default: role:readonly
+
+# Enable metrics
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: false  # Enable when Prometheus is installed

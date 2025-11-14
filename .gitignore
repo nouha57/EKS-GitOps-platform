@@ -1,0 +1,102 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform.lock.hcl
+terraform.tfvars.backup
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+.kube/
+
+# Secrets
+*.pem
+*.key
+*.crt
+secrets/
+*.secret
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Node modules (if you add any Node.js tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if you add any Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# Helm
+charts/*.tgz
+
+# ArgoCD
+argocd-initial-admin-secret.txt
+
+# AWS
+.aws/
+
+# Sensitive data
+*password*
+*secret*
+*token*
+*credentials*
+
+# Except these files
+!kubernetes/platform/argocd/README.md
+!kubernetes/platform/cert-manager/README.md
+!kubernetes/platform/ingress-nginx/README.md
+!kubernetes/platform/external-dns/README.md
