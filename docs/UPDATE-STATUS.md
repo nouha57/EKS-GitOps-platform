@@ -172,14 +172,6 @@ git commit -m "Update: Infrastructure is live"
 git push
 ```
 
-## Interview Preparation
-
-When you have an interview:
-
-1. **2 days before:** Redeploy infrastructure
-2. **1 day before:** Verify everything works, take fresh screenshots
-3. **Day of interview:** Test all URLs
-4. **After interview:** Can destroy or keep for next interview
 
 ## Quick Status Check
 
@@ -190,4 +182,3 @@ aws eks describe-cluster --name eks-gitops-platform-dev --region us-east-2 2>/de
 
 ---
 
-**Remember:** The code is the real portfolio piece. Whether it's live or not, you can always redeploy it in 15 minutes to demonstrate your skills!
