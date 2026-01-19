@@ -375,4 +375,3 @@ Your repository is ready when:
 
 ---
 
-**Congratulations! Your project is now on GitHub and ready to showcase! 🎉**
